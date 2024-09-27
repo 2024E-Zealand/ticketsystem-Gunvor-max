@@ -11,12 +11,27 @@ namespace TicketClassLibrary
     /// </summary>
     public abstract class Vehicle
     {
+        #region Instance fields
+        private string _licenseplate;
+        #endregion
+
         #region Properties
 
         /// <summary>
-        /// Licensplate for the vehicle
+        /// Licensplate for the vehicle. Throws ArgumentOutOfRangeException if length is > 7 
         /// </summary>
-        public string Licenseplate { get; protected set; }
+        public string Licenseplate 
+        { get => _licenseplate;
+            protected set 
+            { 
+                if (value.Length > 7)
+                {
+                    throw new ArgumentOutOfRangeException("Licenseplate cannot be longer that 7 chars");
+                } 
+                _licenseplate = value; 
+            }
+                
+        }
 
         /// <summary>
         /// Date for buying the ticket

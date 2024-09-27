@@ -19,8 +19,6 @@ namespace TicketClassLibrary
         /// <param name="date">date for buying the ticket</param>
         public Car(string licenseplate, DateTime date) : base(licenseplate, date)
         {
-            Licenseplate = licenseplate;
-            Date = date;
         }
 
         /// <summary>
