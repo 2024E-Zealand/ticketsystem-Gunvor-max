@@ -9,29 +9,15 @@ namespace TicketClassLibrary
     /// <summary>
     /// Car class
     /// </summary>
-    public class Car
+    public class Car : Vehicle
     {
-
-        #region Properties
-
-        /// <summary>
-        /// Licensplate for the car
-        /// </summary>
-        public string Licenseplate { get; set; }
-
-        /// <summary>
-        /// Date for buying the ticket
-        /// </summary>
-        public DateTime Date { get; set; }
-        #endregion
-
         #region Contructor
         /// <summary>
         /// Create an instance of the class with the following properties
         /// </summary>
         /// <param name="licenseplate"> Licensplate for the car</param>
         /// <param name="date">date for buying the ticket</param>
-        public Car(string licenseplate, DateTime date)
+        public Car(string licenseplate, DateTime date) : base(licenseplate, date)
         {
             Licenseplate = licenseplate;
             Date = date;
@@ -51,16 +37,16 @@ namespace TicketClassLibrary
         /// Generate the ticket price for a car
         /// </summary>
         /// <returns>the price</returns>
-        public double Price()
+        public override double Price()
         {
-        return 240; 
+            return 240;
         }
 
         /// <summary>
         /// Gets the vehicletype
         /// </summary>
         /// <returns>The type</returns>
-        public string VehicleType()
+        public override string VehicleType()
         {
             return "Car";
         }

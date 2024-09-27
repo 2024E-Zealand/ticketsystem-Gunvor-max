@@ -34,7 +34,7 @@ namespace TicketClassLibrary.Tests
 
             //Act 
             var expectedresult = "MC";
-            var actualresult = mcDefault.Vehicle();
+            var actualresult = mcDefault.VehicleType();
 
             //Assert
             Assert.AreEqual(expectedresult, actualresult);
