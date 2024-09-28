@@ -15,7 +15,7 @@ namespace TicketClassLibrary
         /// <summary>
         /// Create an instance of the class with the following properties
         /// </summary>
-        /// <param name="licenseplate"> Licensplate for the</param>
+        /// <param name="licenseplate"> Licensplate for the motorcyle</param>
         /// <param name="date">date for buying the ticket</param>
         /// <param name="hasBrobizz">determines if the mc has a brobizz</param>
         public MC(string licenseplate, DateTime date, bool hasBrobizz) : base(licenseplate, date, hasBrobizz)
