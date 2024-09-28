@@ -15,18 +15,17 @@ namespace TicketClassLibrary
         /// <summary>
         /// Create an instance of the class with the following properties
         /// </summary>
-        /// <param name="licenseplate"> Licensplate for the car</param>
+        /// <param name="licenseplate"> Licensplate for the</param>
         /// <param name="date">date for buying the ticket</param>
-        public MC(string licenseplate, DateTime date) : base(licenseplate, date)
+        /// <param name="hasBrobizz">determines if the mc has a brobizz</param>
+        public MC(string licenseplate, DateTime date, bool hasBrobizz) : base(licenseplate, date, hasBrobizz)
         {
-            Licenseplate = licenseplate;
-            Date = date;
         }
 
         /// <summary>
         /// Default constructor that create an instance of the object with the following properties if no specifik properties is given
         /// </summary>
-        public MC() : this("0", DateTime.Now)
+        public MC() : this("0", DateTime.Now, false)
         {
 
         }
@@ -39,7 +38,12 @@ namespace TicketClassLibrary
         /// <returns>the price</returns>
         public override double Price()
         {
-            return 125;
+            var price = 125;
+            if (HasBrobizz)
+            {
+                return price * 0.95;
+            }
+            return price;
         }
 
         /// <summary>

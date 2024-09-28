@@ -48,7 +48,7 @@ namespace TicketClassLibrary.Tests
         {
 
             //Arrange + Act
-            Vehicle mc = new MC(licenseplate, DateTime.Now);
+            Vehicle mc = new MC(licenseplate, DateTime.Now, false);
             var actualresult = mc.Licenseplate.Length;
 
             //Assert
@@ -63,10 +63,40 @@ namespace TicketClassLibrary.Tests
         {
 
             //Arrange + Act
-            new MC(licenseplate, DateTime.Now);
+            new MC(licenseplate, DateTime.Now, false);
 
             //Assert
             Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void TestPriceWithoutBrobizzOK()
+        {
+
+            //Arrange
+            Vehicle mc = new MC("DT12345", DateTime.Now, false);
+
+            //Act
+            var expectedresult = 125;
+            var actualresult = mc.Price();
+
+            //Assert
+            Assert.AreEqual(expectedresult, actualresult);
+        }
+
+        [TestMethod()]
+        public void TestPriceWithBrobizzOK()
+        {
+
+            //Arrange
+            Vehicle mc = new MC("DT12345", DateTime.Now, true);
+
+            //Act
+            var expectedresult = 125 * 0.95;
+            var actualresult = mc.Price();
+
+            //Assert
+            Assert.AreEqual(expectedresult, actualresult, 0.1);
         }
     }
 }

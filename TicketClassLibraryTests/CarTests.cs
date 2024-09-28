@@ -48,7 +48,7 @@ namespace TicketClassLibrary.Tests
         {
 
             //Arrange + Act
-            Vehicle car = new Car(licenseplate, DateTime.Now);
+            Vehicle car = new Car(licenseplate, DateTime.Now,false);
             var actualresult = car.Licenseplate.Length;
 
             //Assert
@@ -63,10 +63,40 @@ namespace TicketClassLibrary.Tests
         {
 
             //Arrange + Act
-            new Car(licenseplate, DateTime.Now);
+            new Car(licenseplate, DateTime.Now, false);
 
             //Assert
             Assert.Fail();
+        }
+
+        [TestMethod()]
+        public void TestPriceWithoutBrobizzOK()
+        {
+
+            //Arrange
+            Vehicle car = new Car("DT12345", DateTime.Now, false);
+
+            //Act
+            var expectedresult = 240;
+            var actualresult = car.Price();
+
+            //Assert
+            Assert.AreEqual(expectedresult, actualresult);
+        }
+
+        [TestMethod()]
+        public void TestPriceWithBrobizzOK()
+        {
+
+            //Arrange
+            Vehicle car = new Car("DT12345", DateTime.Now, true);
+
+            //Act
+            var expectedresult = 240 * 0.95;
+            var actualresult = car.Price();
+
+            //Assert
+            Assert.AreEqual(expectedresult, actualresult, 0.1);
         }
     }
 }

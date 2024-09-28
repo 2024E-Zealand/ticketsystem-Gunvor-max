@@ -37,6 +37,11 @@ namespace TicketClassLibrary
         /// Date for buying the ticket
         /// </summary>
         public DateTime Date { get; protected set; }
+
+        /// <summary>
+        /// Determines if the vehicle has a brobizz
+        /// </summary>
+        public bool HasBrobizz {  get; protected set; }
         #endregion
 
         #region Conctructor 
@@ -45,10 +50,12 @@ namespace TicketClassLibrary
         /// </summary>
         /// <param name="licenseplate">License plate for the vehicle</param>
         /// <param name="date">date for buying the ticket</param>
-        public Vehicle(string licenseplate, DateTime date)
+        /// <param name="hasBrobizz">determines if the vehicle has a brobizz</param>
+        public Vehicle(string licenseplate, DateTime date, bool hasBrobizz)
         {
             Licenseplate = licenseplate;
             Date = date;
+            HasBrobizz = hasBrobizz;
         }
         #endregion
 
