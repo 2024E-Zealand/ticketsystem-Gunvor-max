@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TicketClassLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:TicketClassLibrary.Car">
+            <summary>
+            Car class
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.Car.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Create an instance of the class with the following properties
+            </summary>
+            <param name="licenseplate"> Licensplate for the car</param>
+            <param name="date">date for buying the ticket</param>
+            <param name="hasBrobizz">determines if the car has a brobizz</param>
+        </member>
+        <member name="M:TicketClassLibrary.Car.#ctor">
+            <summary>
+            Default constructor that create an instance of the object with the following properties if no specifik properties is given
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.Car.Price">
+            <summary>
+            Generate the ticket price for a car
+            </summary>
+            <returns>the price</returns>
+        </member>
+        <member name="M:TicketClassLibrary.Car.VehicleType">
+            <summary>
+            Gets the vehicletype
+            </summary>
+            <returns>The type</returns>
+        </member>
+        <member name="T:TicketClassLibrary.MC">
+            <summary>
+            MotorCycle class
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.MC.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Create an instance of the class with the following properties
+            </summary>
+            <param name="licenseplate"> Licensplate for the motorcyle</param>
+            <param name="date">date for buying the ticket</param>
+            <param name="hasBrobizz">determines if the mc has a brobizz</param>
+        </member>
+        <member name="M:TicketClassLibrary.MC.#ctor">
+            <summary>
+            Default constructor that create an instance of the object with the following properties if no specifik properties is given
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.MC.Price">
+            <summary>
+            Generate the ticket price for a motercycle
+            </summary>
+            <returns>the price</returns>
+        </member>
+        <member name="M:TicketClassLibrary.MC.VehicleType">
+            <summary>
+            Gets the vehicletype
+            </summary>
+            <returns>The type</returns>
+        </member>
+        <member name="T:TicketClassLibrary.Vehicle">
+            <summary>
+            Baseclass Vehicle
+            </summary>
+        </member>
+        <member name="P:TicketClassLibrary.Vehicle.Licenseplate">
+            <summary>
+            Licensplate for the vehicle. Throws ArgumentOutOfRangeException if length is > 7 
+            </summary>
+        </member>
+        <member name="P:TicketClassLibrary.Vehicle.Date">
+            <summary>
+            Date for buying the ticket
+            </summary>
+        </member>
+        <member name="P:TicketClassLibrary.Vehicle.HasBrobizz">
+            <summary>
+            Determines if the vehicle has a brobizz
+            </summary>
+        </member>
+        <member name="M:TicketClassLibrary.Vehicle.#ctor(System.String,System.DateTime,System.Boolean)">
+            <summary>
+            Subclasses must implement the following properties in their contructor
+            </summary>
+            <param name="licenseplate">License plate for the vehicle</param>
+            <param name="date">date for buying the ticket</param>
+            <param name="hasBrobizz">determines if the vehicle has a brobizz</param>
+        </member>
+        <member name="M:TicketClassLibrary.Vehicle.Price">
+            <summary>
+            Generate the ticket price for the vehicle
+            </summary>
+            <returns>the price</returns>
+        </member>
+        <member name="M:TicketClassLibrary.Vehicle.VehicleType">
+            <summary>
+            Gets the vehicletype
+            </summary>
+            <returns>The type</returns>
+        </member>
+    </members>
+</doc>

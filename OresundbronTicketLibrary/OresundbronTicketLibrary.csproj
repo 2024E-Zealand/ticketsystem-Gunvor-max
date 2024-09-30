@@ -8,6 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="extern dll\" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="TicketClassLibrary">
       <HintPath>extern dll\TicketClassLibrary.dll</HintPath>
     </Reference>
