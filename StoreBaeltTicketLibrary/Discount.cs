@@ -10,36 +10,21 @@ namespace StoreBaeltTicketLibrary
     /// <summary>
     /// Discount class for managing discounts
     /// </summary>
-    public class Discount
+    public static class Discount
     {
         /// <summary>
-        /// Get and set the datetime
+        /// Extending method to the car class that Determines if a car object gets a discount based upon the weekend
         /// </summary>
-        public DateTime Date {  get; set; }
-
-        /// <summary>
-        /// Creates an instance of the class with the following properties
-        /// </summary>
-        /// <param name="dateTime">Set the datetime</param>
-        public Discount(DateTime dateTime)
+        /// <param name="car">The car class</param>
+        /// <returns>The total price for the car</returns>
+        public static double weekendDiscount(this Car car)
         {
-            Date = dateTime;
-        }
-
-        /// <summary>
-        /// Determines if a car object gets a discount based upon the weekend
-        /// </summary>
-        /// <param name="car">the car object</param>
-        /// <returns>the total price for the car </returns>
-        public double weekendDiscount(Car car)
-        {
-            Car testcar = new Car();
-            var price = testcar.Price();
-            double totalprice = 0;
-            if (Date.DayOfWeek == DayOfWeek.Saturday || Date.DayOfWeek == DayOfWeek.Sunday)
-            {
-                totalprice = (price *= 0.80) * 0.95;
-                return totalprice;
+            Car carWithNoBrobizz = new Car();
+            double price = carWithNoBrobizz.Price();
+            if (car.Date.DayOfWeek == DayOfWeek.Saturday || car.Date.DayOfWeek == DayOfWeek.Sunday)
+            { 
+                price = (price *= 0.80) * 0.95;
+                return price;
             }
             else if (car.HasBrobizz) 
             {

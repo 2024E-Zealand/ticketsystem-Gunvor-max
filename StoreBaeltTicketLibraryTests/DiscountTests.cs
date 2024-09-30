@@ -16,13 +16,12 @@ namespace StoreBaeltTicketLibrary.Tests
         public void weekendDiscountTestInWeekendsOK()
         {
             //Arrange
-            Car car = new Car("DT12345", DateTime.Now, true);
+            Car carWithBrobizz = new Car("DT12345", new DateTime(2024, 9, 29), true);
             Car cardefault = new Car();
-            Discount discount = new Discount(DateTime.Now);
 
             //Act 
             double expectedresult = (cardefault.Price() * 0.80) * 0.95;
-            double actualresult = discount.weekendDiscount(car);
+            double actualresult = carWithBrobizz.weekendDiscount();
 
             //Assert
             Assert.AreEqual(expectedresult, actualresult, 0.1);
@@ -32,17 +31,12 @@ namespace StoreBaeltTicketLibrary.Tests
         public void weekendDiscountTestInWeekDaysOK()
         {
             //Arrange
-            Car car = new Car("DT12345", DateTime.Now, true);
-            Car cardefault = new Car();
-            Discount discount = new Discount(DateTime.Now);
+            Car carWithBrobizz = new Car("DT12345", new DateTime(2024, 9, 30), true);
+            Car carNoBrobizz = new Car();
 
-            if (discount.Date.DayOfWeek == DayOfWeek.Saturday || discount.Date.DayOfWeek == DayOfWeek.Sunday) 
-            {
-                discount.Date = discount.Date.AddDays(2);   
-            }
             //Act 
-            double expectedresult = car.Price();
-            double actualresult = discount.weekendDiscount(car);
+            double expectedresult = 240 * 0.95;
+            double actualresult = carWithBrobizz.weekendDiscount();
 
             //Assert
             Assert.AreEqual(expectedresult, actualresult, 0.1);
