@@ -11,9 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreBaeltTicketLibrary", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "StoreBaeltTicketLibraryTests", "StoreBaeltTicketLibraryTests\StoreBaeltTicketLibraryTests.csproj", "{AED124E3-7355-4735-862E-3B0E76FDAE9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OresundbronTicketLibrary", "OresundbronTicketLibrary\OresundbronTicketLibrary.csproj", "{06A5F9A9-6485-4894-B01F-3127CD1874AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OresundbronTicketLibrary", "OresundbronTicketLibrary\OresundbronTicketLibrary.csproj", "{06A5F9A9-6485-4894-B01F-3127CD1874AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OresundbronTicketLibraryTests", "OresundbronTicketLibraryTests\OresundbronTicketLibraryTests.csproj", "{76EA4DC1-3300-4E67-AD39-3942D6C0CCAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OresundbronTicketLibraryTests", "OresundbronTicketLibraryTests\OresundbronTicketLibraryTests.csproj", "{76EA4DC1-3300-4E67-AD39-3942D6C0CCAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
